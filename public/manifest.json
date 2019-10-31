@@ -1,0 +1,52 @@
+{
+  "manifest_version": 2,
+  "name": "Hype Autofill",
+  "author": "Arevi",
+  "version": "1.0.0",
+  "description": "Automate the filling of checkout forms, increasing your chance of purchasing limited release items.",
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "Hype Autofill"
+  },
+  "icons": {
+    "16": "./images/16.png",
+    "24": "./images/24.png",
+    "32": "./images/32.png",
+    "64": "./images/64.png",
+    "128": "./images/128.png"
+  },
+  "permissions": ["storage", "activeTab"],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*/checkouts/*"],
+      "js": ["sites/shopify.js"]
+    },
+    {
+      "matches": ["https://*.shopifycs.com/*"],
+      "js": ["sites/shopify-billing.js"],
+      "all_frames": true
+    },
+    {
+      "matches": ["https://js.stripe.com/*"],
+      "js": ["sites/stripe.js"],
+      "all_frames": true
+    },
+    {
+      "matches": ["https://www.supremenewyork.com/checkout"],
+      "js": ["sites/supreme.js"]
+    }
+  ],
+  "options_page": "options/options.html",
+  "commands": {
+    "autofill": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+K",
+        "windows": "Ctrl+Shift+K"
+      },
+      "description": "Initiate autofill on the current page."
+    }
+  }
+}

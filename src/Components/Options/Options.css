@@ -1,0 +1,73 @@
+:root {
+  --primary-blue: #007bff;
+  --off-white: #f8f9fa;
+}
+
+.options-area {
+  display: flex;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  align-items: baseline;
+}
+
+.options-titles {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+.options-buttons {
+  display: flex;
+  flex-flow: column;
+  padding-left: 12%;
+}
+
+.options-title {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: block;
+  width: 20%;
+  height: 2rem;
+}
+
+.selected {
+  background-color: var(--primary-blue);
+  color: var(--off-white);
+}
+
+button {
+  margin-top: 0.5rem;
+  display: inline-block;
+  width: 27%;
+  height: 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var(--off-white);
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+  outline: none;
+}
+
+button:nth-of-type(odd) {
+  border-top-left-radius: 0.2rem;
+  border-bottom-left-radius: 0.2rem;
+}
+
+button:nth-of-type(even) {
+  border-top-right-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+}
+
+button:hover {
+  transition: ease-in 0.2s;
+  background-color: var(--primary-blue);
+  color: var(--off-white);
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: grey;
+  border-color: var(--off-white);
+  color: var(--off-white);
+}

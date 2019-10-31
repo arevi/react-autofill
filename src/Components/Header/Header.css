@@ -1,0 +1,15 @@
+:root {
+  --primary-blue: #007bff;
+  --off-white: #f8f9fa;
+}
+header {
+  padding: 0.5rem 0rem;
+  background-color: var(--primary-blue);
+  color: var(--off-white);
+}
+
+#title-text {
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
