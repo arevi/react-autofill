@@ -24,3 +24,7 @@ Automate the filling of checkout forms, increasing your chance of purchasing lim
 - Footsites
 - Mesh
 - PayPal
+
+# Screenshot
+
+![Imgur Image](https://i.imgur.com/u1uKepY.png)
