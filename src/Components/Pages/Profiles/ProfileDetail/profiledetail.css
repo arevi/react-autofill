@@ -28,8 +28,8 @@
 .border-label {
   margin: 1rem 0 -1.2rem 2rem;
   color: white;
-  font-size: 1.1rem;
-  width: 10.6rem;
+  font-size: 1.2rem;
+  width: 12rem;
   font-weight: 500;
 }
 
@@ -48,6 +48,7 @@ input[type='text']:focus {
 
 label {
   color: white;
+  font-size: 1rem;
 }
 
 label:not(:first-of-type) {

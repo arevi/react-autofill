@@ -4,7 +4,11 @@ import './navitem.css';
 
 function NavItem(props) {
   return (
-    <NavLink exact to={props.route} activeClassName='selected'>
+    <NavLink
+      exact={props.name !== 'Home' ? false : true}
+      to={props.route}
+      activeClassName='selected'
+    >
       <li>{props.name}</li>
     </NavLink>
   );
