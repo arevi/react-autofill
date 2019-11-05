@@ -39,6 +39,7 @@
       "js": ["sites/supreme.js"]
     }
   ],
+  "web_accessible_resources": ["fonts/Roboto-Mono.woff2"],
   "commands": {
     "autofill": {
       "suggested_key": {

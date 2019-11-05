@@ -9,6 +9,8 @@ function Profiles(props) {
   const profiles = useSelector(state => state.profiles);
   const [editingProfile, setEditingProfile] = useState(profiles[0]);
 
+  console.log(profiles);
+
   useEffect(() => {
     saveProfiles(profiles);
   }, [profiles]);
@@ -25,6 +27,7 @@ function Profiles(props) {
       <Selector
         text='Edit Profile'
         selection={value => profileSelected(value)}
+        items={profiles.map(profile => profile.name)}
       />
       <ProfileDetail activeEdit={editingProfile} allProfiles={profiles} />
     </div>
