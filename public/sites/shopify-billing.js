@@ -48,12 +48,16 @@ const fillBilling = profile => {
   fields.forEach(field => {
     let pageElement = document.getElementById(field);
     let detail = fieldDetails[field];
-    pageElement.select();
+    field.focus();
+
     if (options.entry === 'instant') {
-      pageElement.value = detail;
+      fillField(pageElement, detail);
     } else {
-      type(pageElement, detail);
+      typeField(pageElement, detail);
     }
+
+    field.dispatchEvent(new Event('change'));
+    field.blur();
   });
   InitiateCheckout();
 };
@@ -64,9 +68,13 @@ const InitiateCheckout = () => {
   chrome.runtime.sendMessage({ action: 'finalizeCheckout' });
 };
 
+const fillField = (field, detail) => {
+  field.value = detail;
+};
+
 // Types a string into a field, one character at a time
-const type = (field, text) => {
-  for (let index = 0; index < text.length; index++) {
-    field.value += text.charAt(index);
+const typeField = (field, detail) => {
+  for (let index = 0; index < detail.length; index++) {
+    field.value += detail.charAt(index);
   }
 };

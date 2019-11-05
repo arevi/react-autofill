@@ -47,18 +47,24 @@ const fillBilling = profile => {
     let pageElement = document.getElementsByName(field)[0];
     if (!pageElement) return;
     let detail = fieldDetails[field];
-    pageElement.select();
+    pageElement.focus();
     if (options.entry === 'instant') {
-      pageElement.value = detail;
+      fillField(field, detail);
     } else {
-      type(pageElement, detail);
+      typeField(pageElement, detail);
     }
+    pageElement.dispatchEvent(new Event('change'));
+    pageElement.blur();
   });
 };
 
+const fillField = (field, detail) => {
+  field.value = detail;
+};
+
 // Types a string into a field, one character at a time
-const type = (field, text) => {
-  for (let index = 0; index < text.length; index++) {
-    field.value += text.charAt(index);
+const typeField = (field, detail) => {
+  for (let index = 0; index < detail.length; index++) {
+    field.value += detail.charAt(index);
   }
 };
