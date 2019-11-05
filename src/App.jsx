@@ -32,12 +32,15 @@ function App() {
     if (profileData) {
       console.log('Loaded old data.');
       profileData.forEach(profile => dispatch(addProfile(profile)));
-      dispatch(setOptions(optionData));
     } else {
       console.log('Created new data.');
-      dispatch(addProfile(getTestProfile()));
-      dispatch(setOptions(getDefaultOptions()));
+      profileData = [getTestProfile()];
+      optionData = getDefaultOptions();
+
+      dispatch(addProfile(profileData[0]));
     }
+
+    dispatch(setOptions(optionData));
 
     saveProfiles(profileData);
     saveOptions(optionData);

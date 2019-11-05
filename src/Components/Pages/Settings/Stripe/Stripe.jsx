@@ -1,6 +1,10 @@
 import React from 'react';
 
-function Stripe() {
+function Stripe(props) {
+  const handleOptionUpdate = (setting, value) => {
+    props.modifyOption(setting, value);
+  };
+
   return (
     <div className='settings-wrapper'>
       <div className='row'>
@@ -9,6 +13,10 @@ function Stripe() {
           class='checkbox-custom'
           name='compFillCheckbox'
           type='checkbox'
+          defaultChecked={props.initialValues['comprehensiveFill']}
+          onChange={e =>
+            handleOptionUpdate('comprehensiveFill', e.target.checked)
+          }
         />
         <label for='compFillCheckbox' class='checkbox-custom-label'>
           Comprehensive Fill
@@ -18,6 +26,8 @@ function Stripe() {
           class='checkbox-custom'
           name='procPaymentCheckbox'
           type='checkbox'
+          defaultChecked={props.initialValues['processPayment']}
+          onChange={e => handleOptionUpdate('processPayment', e.target.checked)}
         />
         <label for='procPaymentCheckbox' class='checkbox-custom-label'>
           Process Payment

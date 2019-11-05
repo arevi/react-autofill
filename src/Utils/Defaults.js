@@ -1,18 +1,22 @@
 // Returns default options
 const getDefaultOptions = () => {
   return {
-    trigger: 'hotkey',
-    entry: 'instant',
+    general: {
+      automatic: false,
+      simulateTyping: false
+    },
     shopify: {
       navigateSteps: true,
-      processPayment: false
+      processPayment: false,
+      skipShipping: false
     },
     supreme: {
       checkTerms: false,
       processPayment: false
     },
     stripe: {
-      comprehensiveFill: false
+      comprehensiveFill: false,
+      processPayment: false
     }
   };
 };

@@ -1,7 +1,11 @@
 import React from 'react';
 import './general.css';
 
-function General() {
+function General(props) {
+  const handleOptionUpdate = (setting, value) => {
+    props.modifyOption(setting, value);
+  };
+
   return (
     <div className='settings-wrapper'>
       <div className='row'>
@@ -10,6 +14,8 @@ function General() {
           class='checkbox-custom'
           name='autoFillCheckbox'
           type='checkbox'
+          defaultChecked={props.initialValues['automatic']}
+          onChange={e => handleOptionUpdate('automatic', e.target.checked)}
         />
         <label for='autoFillCheckbox' class='checkbox-custom-label'>
           Automatic Fill
@@ -19,6 +25,8 @@ function General() {
           class='checkbox-custom'
           name='simTypingCheckbox'
           type='checkbox'
+          defaultChecked={props.initialValues['simulateTyping']}
+          onChange={e => handleOptionUpdate('simulateTyping', e.target.checked)}
         />
         <label for='simTypingCheckbox' class='checkbox-custom-label'>
           Simulate Typing

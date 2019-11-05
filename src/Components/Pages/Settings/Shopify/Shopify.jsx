@@ -1,6 +1,10 @@
 import React from 'react';
 
-function Shopify() {
+function Shopify(props) {
+  const handleOptionUpdate = (setting, value) => {
+    props.modifyOption(setting, value);
+  };
+
   return (
     <div className='settings-wrapper'>
       <div className='row'>
@@ -9,6 +13,8 @@ function Shopify() {
           className='checkbox-custom'
           name='navStepsCheckbox'
           type='checkbox'
+          defaultChecked={props.initialValues['navigateSteps']}
+          onChange={e => handleOptionUpdate('navigateSteps', e.target.checked)}
         />
         <label for='navStepsCheckbox' className='checkbox-custom-label'>
           Navigate Steps
@@ -18,6 +24,8 @@ function Shopify() {
           className='checkbox-custom'
           name='procPaymentCheckbox'
           type='checkbox'
+          defaultChecked={props.initialValues['processPayment']}
+          onChange={e => handleOptionUpdate('processPayment', e.target.checked)}
         />
         <label for='procPaymentCheckbox' className='checkbox-custom-label'>
           Process Payment
@@ -29,6 +37,8 @@ function Shopify() {
           className='checkbox-custom'
           name='skipShipCheckbox'
           type='checkbox'
+          defaultChecked={props.initialValues['skipShipping']}
+          onChange={e => handleOptionUpdate('skipShipping', e.target.checked)}
         />
         <label for='skipShipCheckbox' className='checkbox-custom-label'>
           Skip Shipping
