@@ -1,0 +1,37 @@
+:root {
+  --primary: #3700d3;
+  --bg-dark: #212121;
+  --grey: #303030;
+  --lighter-grey: #424242;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 10px;
+}
+
+body {
+  width: 40rem;
+}
+
+.App {
+  border-radius: 0.2rem;
+}
+
+.dark {
+  background-color: var(--bg-dark);
+}
+
+.dark li {
+  color: white;
+}
+
+.page {
+  margin: 0.8rem 0;
+}

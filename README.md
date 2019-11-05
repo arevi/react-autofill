@@ -1,4 +1,4 @@
-# Hype-Autofill
+# React-Autofill
 
 Automate the filling of checkout forms, increasing your chance of purchasing limited release items.
 
@@ -7,6 +7,13 @@ Automate the filling of checkout forms, increasing your chance of purchasing lim
 - "npm install"
 - "npm run build"
 - See /build/ for output
+
+# Install Instructions
+
+- Download the latest build from the releases page
+- Navigate to chrome://extensions/
+- Enable Developer mode
+- Drag and drop the zip file into the extensions page
 
 # Usage
 
@@ -24,7 +31,3 @@ Automate the filling of checkout forms, increasing your chance of purchasing lim
 - Footsites
 - Mesh
 - PayPal
-
-# Screenshot
-
-![Imgur Image](https://i.imgur.com/u1uKepY.png)

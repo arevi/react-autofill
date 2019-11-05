@@ -1,0 +1,23 @@
+:root {
+  --primary: #3700d3;
+  --bg-dark: #212121;
+  --grey: #303030;
+  --lighter-grey: #424242;
+}
+
+li {
+  list-style: none;
+  padding: 0.5rem 0;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.selected {
+  transition: ease-in 0.2s;
+  background-color: var(--lighter-grey);
+}

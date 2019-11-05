@@ -1,0 +1,111 @@
+:root {
+  --primary: #3700d3;
+  --bg-dark: #212121;
+  --grey: #303030;
+  --lighter-grey: #424242;
+}
+
+.wrapper {
+  margin: 1rem;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: row;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.col-1 {
+  display: flex;
+  flex-flow: column;
+}
+
+.col-2 {
+  display: flex;
+  flex-flow: column;
+}
+
+.border-label {
+  margin: 1rem 0 -1.2rem 2rem;
+  color: white;
+  font-size: 1.1rem;
+  width: 10.6rem;
+  font-weight: 500;
+}
+
+input[type='text'] {
+  background-color: var(--bg-dark);
+  border: 0.2rem solid white;
+  border-radius: 0.3rem;
+  font-size: 1.3rem;
+  color: white;
+}
+input[type='text']:focus {
+  transition: 0.2s ease-in;
+  border: 0.2rem solid red;
+  outline: none;
+}
+
+label {
+  color: white;
+}
+
+label:not(:first-of-type) {
+  margin-top: 0.8rem;
+}
+
+#cardTypeSelect {
+  width: 100%;
+}
+
+#profileControls {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn {
+  transition: 0.2s ease-in;
+  background-color: transparent;
+  border: 0.1rem solid white;
+  border-radius: 0.3rem;
+  width: 8rem;
+  color: white;
+  outline: none;
+  font-weight: bold;
+}
+
+.btn:first-of-type {
+  margin-right: 1rem;
+}
+
+.save:hover {
+  background-color: lawngreen;
+  cursor: pointer;
+}
+
+.delete:hover {
+  background-color: red;
+  cursor: pointer;
+}
+
+.save:active,
+.delete:active {
+  transform: translateY(0.2rem);
+}
+
+.split-col {
+  display: flex;
+  flex-flow: row;
+}
+
+.split-col div:nth-of-type(2) {
+  margin-left: 1rem;
+}
+
+.split-col input {
+  width: 8rem;
+}
+
+.split-col select {
+  width: 8rem;
+}

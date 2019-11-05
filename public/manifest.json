@@ -1,12 +1,12 @@
 {
   "manifest_version": 2,
-  "name": "Hype Autofill",
+  "name": "React Autofill",
   "author": "Arevi",
   "version": "1.0.0",
-  "description": "Automate the filling of checkout forms, increasing your chance of purchasing limited release items.",
+  "description": "Automate the filling of checkout forms, increasing your checkout speeds.",
   "browser_action": {
     "default_popup": "index.html",
-    "default_title": "Hype Autofill"
+    "default_title": "React Autofill"
   },
   "icons": {
     "16": "./images/16.png",
@@ -39,7 +39,6 @@
       "js": ["sites/supreme.js"]
     }
   ],
-  "options_page": "options/options.html",
   "commands": {
     "autofill": {
       "suggested_key": {

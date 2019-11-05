@@ -1,0 +1,12 @@
+:root {
+  --lighter-grey: #424242;
+}
+
+nav {
+  border-bottom: 0.2rem solid var(--lighter-grey);
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+}

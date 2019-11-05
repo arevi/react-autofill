@@ -1,0 +1,24 @@
+:root {
+  --lighter-grey: #424242;
+}
+
+#footer {
+  border-top: 2px solid var(--lighter-grey);
+  display: flex;
+  justify-content: flex-end;
+}
+
+#footer p,
+#footer a {
+  padding: 0.2rem 0.2rem 0.2rem 0;
+  font-size: 0.8rem;
+}
+
+#footer a {
+  text-decoration: none;
+  color: white;
+}
+
+#footer a:hover {
+  color: red;
+}

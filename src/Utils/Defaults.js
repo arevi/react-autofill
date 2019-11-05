@@ -3,7 +3,6 @@ const getDefaultOptions = () => {
   return {
     trigger: 'hotkey',
     entry: 'instant',
-    mode: 'normal',
     shopify: {
       navigateSteps: true,
       processPayment: false
@@ -49,7 +48,8 @@ const getTestProfile = () => {
       expMonth: '01',
       expYear: '2020',
       cvv: '123',
-      country: 'United States'
+      country: 'United States',
+      cardType: 'Mastercard'
     }
   };
 };
