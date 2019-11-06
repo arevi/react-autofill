@@ -16,7 +16,7 @@ chrome.storage.local.get(['options'], function(result) {
 // Sets up the trigger that will initialize the autofill function
 // Can accept either a hotkey or be triggered by pageload
 const setupTriggers = (options, profile) => {
-  if (options.trigger === 'hotkey') {
+  if (!options.general.automatic) {
     chrome.extension.onMessage.addListener(function(request) {
       if (request.action === 'autofill') {
         fillBilling(profile);
@@ -29,6 +29,7 @@ const setupTriggers = (options, profile) => {
 
 //Automatically fill out the standard stripe iframe with the users supplied information
 const fillBilling = profile => {
+  console.log('Running');
   let billingDetails = profile.billing;
 
   const optionalFields = {

@@ -16,7 +16,7 @@ chrome.storage.local.get(['options'], function(result) {
 // Sets up the trigger that will initialize the autofill function
 // Can accept either a hotkey or be triggered by pageload
 const setupTriggers = (options, profile) => {
-  if (options.trigger === 'hotkey') {
+  if (!options.general.automatic) {
     chrome.extension.onMessage.addListener(function(request) {
       if (request.action === 'autofill') {
         fillBilling(profile);
