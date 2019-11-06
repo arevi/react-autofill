@@ -41,7 +41,9 @@ const fillBilling = profile => {
     "[autocomplete='address-level2']": billingDetails.city,
     "[autocomplete='address-level1']": billingDetails.state,
     "[autocomplete='postal-code']": billingDetails.zipcode,
+    "[autocomplete='billing postal-code']": billingDetails.zipcode,
     "[autocomplete='country-name']": billingDetails.country,
+    "[autocomplete='ccname']": `${billingDetails.first_name} ${billingDetails.last_name}`,
     "[autocomplete='cc-exp-month']": billingDetails.expMonth,
     "[autocomplete='cc-exp-year']": billingDetails.expYear
   };

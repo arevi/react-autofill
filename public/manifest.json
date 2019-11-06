@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "React Autofill",
   "author": "Arevi",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Automate the filling of checkout forms, increasing your checkout speeds.",
   "browser_action": {
     "default_popup": "index.html",
@@ -27,6 +27,8 @@
         "https://*/*/checkouts/*",
         "https://*.shopifycs.com/*",
         "https://js.stripe.com/*",
+        "https://checkout.stripe.com/m/v3/*",
+        "https://checkout.stripe.com/pay*",
         "https://www.supremenewyork.com/checkout"
       ]
     },
@@ -40,7 +42,11 @@
       "all_frames": true
     },
     {
-      "matches": ["https://js.stripe.com/*"],
+      "matches": [
+        "https://js.stripe.com/*",
+        "https://checkout.stripe.com/m/v3/*",
+        "https://checkout.stripe.com/pay*"
+      ],
       "js": ["sites/stripe.js"],
       "all_frames": true
     },
