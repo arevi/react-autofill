@@ -16,7 +16,7 @@ function Shopify(props) {
           defaultChecked={props.initialValues['navigateSteps']}
           onChange={e => handleOptionUpdate('navigateSteps', e.target.checked)}
         />
-        <label for='navStepsCheckbox' className='checkbox-custom-label'>
+        <label htmlFor='navStepsCheckbox' className='checkbox-custom-label'>
           Navigate Steps
         </label>
         <input
@@ -27,7 +27,7 @@ function Shopify(props) {
           defaultChecked={props.initialValues['processPayment']}
           onChange={e => handleOptionUpdate('processPayment', e.target.checked)}
         />
-        <label for='procPaymentCheckbox' className='checkbox-custom-label'>
+        <label htmlFor='procPaymentCheckbox' className='checkbox-custom-label'>
           Process Payment
         </label>
       </div>
@@ -40,7 +40,7 @@ function Shopify(props) {
           defaultChecked={props.initialValues['skipShipping']}
           onChange={e => handleOptionUpdate('skipShipping', e.target.checked)}
         />
-        <label for='skipShipCheckbox' className='checkbox-custom-label'>
+        <label htmlFor='skipShipCheckbox' className='checkbox-custom-label'>
           Skip Shipping
         </label>
       </div>

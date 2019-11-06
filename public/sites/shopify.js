@@ -10,7 +10,7 @@ chrome.storage.local.get(['selectedProfile'], function(result) {
 // Grabs the options for the supreme website
 chrome.storage.local.get(['options'], function(result) {
   options = result.options;
-  setupTriggers(options, profile);
+  setupTriggers(options);
 });
 
 // Sets up the trigger that will initialize the autofill function

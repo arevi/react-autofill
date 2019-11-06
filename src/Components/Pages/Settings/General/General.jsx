@@ -11,24 +11,24 @@ function General(props) {
       <div className='row'>
         <input
           id='autoFillCheckbox'
-          class='checkbox-custom'
+          className='checkbox-custom'
           name='autoFillCheckbox'
           type='checkbox'
           defaultChecked={props.initialValues['automatic']}
           onChange={e => handleOptionUpdate('automatic', e.target.checked)}
         />
-        <label for='autoFillCheckbox' class='checkbox-custom-label'>
+        <label htmlFor='autoFillCheckbox' className='checkbox-custom-label'>
           Automatic Fill
         </label>
         <input
           id='simTypingCheckbox'
-          class='checkbox-custom'
+          className='checkbox-custom'
           name='simTypingCheckbox'
           type='checkbox'
           defaultChecked={props.initialValues['simulateTyping']}
           onChange={e => handleOptionUpdate('simulateTyping', e.target.checked)}
         />
-        <label for='simTypingCheckbox' class='checkbox-custom-label'>
+        <label htmlFor='simTypingCheckbox' className='checkbox-custom-label'>
           Simulate Typing
         </label>
       </div>

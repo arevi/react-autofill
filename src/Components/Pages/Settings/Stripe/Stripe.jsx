@@ -10,7 +10,7 @@ function Stripe(props) {
       <div className='row'>
         <input
           id='compFillCheckbox'
-          class='checkbox-custom'
+          className='checkbox-custom'
           name='compFillCheckbox'
           type='checkbox'
           defaultChecked={props.initialValues['comprehensiveFill']}
@@ -18,18 +18,18 @@ function Stripe(props) {
             handleOptionUpdate('comprehensiveFill', e.target.checked)
           }
         />
-        <label for='compFillCheckbox' class='checkbox-custom-label'>
+        <label htmlFor='compFillCheckbox' className='checkbox-custom-label'>
           Comprehensive Fill
         </label>
         <input
           id='procPaymentCheckbox'
-          class='checkbox-custom'
+          className='checkbox-custom'
           name='procPaymentCheckbox'
           type='checkbox'
           defaultChecked={props.initialValues['processPayment']}
           onChange={e => handleOptionUpdate('processPayment', e.target.checked)}
         />
-        <label for='procPaymentCheckbox' class='checkbox-custom-label'>
+        <label htmlFor='procPaymentCheckbox' className='checkbox-custom-label'>
           Process Payment
         </label>
       </div>
