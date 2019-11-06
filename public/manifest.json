@@ -41,6 +41,15 @@
     {
       "matches": ["https://www.supremenewyork.com/checkout"],
       "js": ["sites/supreme.js"]
+    },
+    {
+      "matches": [
+        "https://www.footlocker.com/checkout",
+        "https://www.champssports.com/checkout",
+        "https://www.footaction.com/checkout",
+        "https://www.eastbay.com/checkout"
+      ],
+      "js": ["sites/footsites.js"]
     }
   ],
   "web_accessible_resources": ["fonts/Roboto-Mono.woff2"],
