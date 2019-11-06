@@ -58,8 +58,8 @@ const fillBilling = profile => {
     if (!pageElement) return;
     let detail = possibleFields[field];
     pageElement.focus();
-    if (options.entry === 'instant') {
-      fillField(field, detail);
+    if (!options.simulateTyping) {
+      fillField(pageElement, detail);
     } else {
       typeField(pageElement, detail);
     }

@@ -58,7 +58,6 @@ const fillBilling = profile => {
     fieldDetails = { ...fieldDetails, ...optionalFields };
   }
 
-  console.log(fieldDetails);
   const fields = Object.keys(fieldDetails);
 
   fields.forEach(field => {
@@ -66,8 +65,8 @@ const fillBilling = profile => {
     if (!pageElement) return;
     let detail = fieldDetails[field];
     pageElement.focus();
-    if (options.entry === 'instant') {
-      fillField(field, detail);
+    if (!options.simulateTyping) {
+      fillField(pageElement, detail);
     } else {
       typeField(pageElement, detail);
     }

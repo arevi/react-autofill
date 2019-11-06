@@ -67,7 +67,7 @@ const fillShipping = profile => {
     let detail = fieldDetails[field];
     pageElement.focus();
 
-    if (options.entry === 'instant') {
+    if (!options.simulateTyping) {
       fillField(pageElement, detail);
     } else {
       typeField(pageElement, detail);

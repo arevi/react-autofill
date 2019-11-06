@@ -20,7 +20,7 @@ chrome.storage.local.get(['options'], function(result) {
 // Sets up the trigger that will initialize the autofill function
 // Can accept either a hotkey or be triggered by pageload
 const setupTriggers = (options, profile) => {
-  if (options.trigger === 'hotkey') {
+  if (!options.general.automatic) {
     chrome.extension.onMessage.addListener(function(request) {
       if (request.action === 'autofill') {
         fill(profile);
@@ -56,7 +56,7 @@ const fill = profile => {
     let detail = fieldDetails[field];
     pageElement.focus();
 
-    if (options.entry === 'instant') {
+    if (!options.simulateTyping) {
       fillField(pageElement, detail);
     } else {
       typeField(pageElement, detail);
