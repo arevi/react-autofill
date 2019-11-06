@@ -22,7 +22,13 @@
   "content_scripts": [
     {
       "matches": ["https://*/*", "http://*/*"],
-      "js": ["sites/all.js"]
+      "js": ["sites/all.js"],
+      "exclude_matches": [
+        "https://*/*/checkouts/*",
+        "https://*.shopifycs.com/*",
+        "https://js.stripe.com/*",
+        "https://www.supremenewyork.com/checkout"
+      ]
     },
     {
       "matches": ["https://*/*/checkouts/*"],
