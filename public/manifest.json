@@ -47,6 +47,10 @@
     {
       "matches": ["https://www.supremenewyork.com/checkout"],
       "js": ["sites/supreme.js"]
+    },
+    {
+      "matches": ["https://www.checkout.bigcartel.com/*"],
+      "js": ["sites/bigcartel.js"]
     }
   ],
   "web_accessible_resources": ["fonts/Roboto-Mono.woff2"],
