@@ -21,6 +21,10 @@
   },
   "content_scripts": [
     {
+      "matches": ["https://*/*", "http://*/*"],
+      "js": ["sites/all.js"]
+    },
+    {
       "matches": ["https://*/*/checkouts/*"],
       "js": ["sites/shopify.js"]
     },

@@ -31,7 +31,13 @@ const setupTriggers = (options, profile) => {
 const fillBilling = profile => {
   let billingDetails = profile.billing;
 
-  const optionalFields = {
+  let possibleFields = {
+    "[autocomplete='email']": billingDetails.email,
+    "[autocomplete='cc-number']": billingDetails.cardNumber,
+    "[autocomplete='cc-exp']": `${
+      billingDetails.expMonth
+    }/${billingDetails.expYear.slice(2)}`,
+    "[autocomplete='cc-csc']": billingDetails.cvv,
     "[autocomplete='name']": `${billingDetails.first_name} ${billingDetails.last_name}`,
     "[autocomplete='given-name']": billingDetails.first_name,
     "[autocomplete='family-name']": billingDetails.last_name,
@@ -45,26 +51,12 @@ const fillBilling = profile => {
     "[autocomplete='cc-exp-year']": billingDetails.expYear
   };
 
-  let fieldDetails = {
-    "[autocomplete='email']": billingDetails.email,
-    "[autocomplete='cc-number']": billingDetails.cardNumber,
-    "[autocomplete='cc-exp']": `${
-      billingDetails.expMonth
-    }/${billingDetails.expYear.slice(2)}`,
-    "[autocomplete='cc-csc']": billingDetails.cvv
-  };
-
-  if (options.stripe.comprehensiveFill) {
-    fieldDetails = { ...fieldDetails, ...optionalFields };
-  }
-
-  console.log(fieldDetails);
-  const fields = Object.keys(fieldDetails);
+  const fields = Object.keys(possibleFields);
 
   fields.forEach(field => {
     let pageElement = document.querySelector(field);
     if (!pageElement) return;
-    let detail = fieldDetails[field];
+    let detail = possibleFields[field];
     pageElement.focus();
     if (options.entry === 'instant') {
       fillField(field, detail);
