@@ -13,7 +13,8 @@ import {
   getProfiles,
   getOptions,
   saveProfiles,
-  saveOptions
+  saveOptions,
+  setCurrentProfile
 } from './Utils/storageHandler';
 import NavBar from './Components/Nav/NavBar/NavBar';
 import Footer from './Components/Footer/Footer';
@@ -30,10 +31,8 @@ function App() {
     let optionData = getOptions();
 
     if (profileData) {
-      console.log('Loaded old data.');
       profileData.forEach(profile => dispatch(addProfile(profile)));
     } else {
-      console.log('Created new data.');
       profileData = [getTestProfile()];
       optionData = getDefaultOptions();
 
@@ -41,7 +40,7 @@ function App() {
     }
 
     dispatch(setOptions(optionData));
-
+    setCurrentProfile(profileData[0]);
     saveProfiles(profileData);
     saveOptions(optionData);
   }, []);

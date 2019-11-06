@@ -49,10 +49,6 @@ function ProfileDetail(props) {
     }
   }, [props.activeEdit]);
 
-  useEffect(() => {
-    console.log(profile);
-  }, [profile]);
-
   const modifyProfile = (e, field, type) => {
     let updatedProfile = { ...profile };
     if (type) {
@@ -60,6 +56,7 @@ function ProfileDetail(props) {
     } else {
       updatedProfile[field] = e.target.value;
     }
+
     setProfile(updatedProfile);
   };
 

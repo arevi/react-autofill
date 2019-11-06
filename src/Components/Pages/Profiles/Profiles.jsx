@@ -9,8 +9,6 @@ function Profiles(props) {
   const profiles = useSelector(state => state.profiles);
   const [editingProfile, setEditingProfile] = useState(profiles[0]);
 
-  console.log(profiles);
-
   useEffect(() => {
     saveProfiles(profiles);
   }, [profiles]);
@@ -19,7 +17,7 @@ function Profiles(props) {
 
   const profileSelected = profileName => {
     let profile = profiles.filter(profile => profile.name === profileName)[0];
-    setEditingProfile(profile);
+    setEditingProfile({ ...profile });
   };
 
   return (

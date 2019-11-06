@@ -18,6 +18,7 @@ export const saveProfiles = profiles => {
 
 export const saveOptions = options => {
   localStorage.setItem('options', JSON.stringify(options));
+  chrome.storage.local.set({ options: options });
 };
 
 // Sets the current profile to be used for autofilling to Chrome's local storage

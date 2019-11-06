@@ -54,7 +54,7 @@ const fill = profile => {
   fields.forEach(field => {
     let pageElement = document.getElementById(field);
     let detail = fieldDetails[field];
-    field.focus();
+    pageElement.focus();
 
     if (options.entry === 'instant') {
       fillField(pageElement, detail);
@@ -62,8 +62,8 @@ const fill = profile => {
       typeField(pageElement, detail);
     }
 
-    field.dispatchEvent(new Event('change'));
-    field.blur();
+    pageElement.dispatchEvent(new Event('change'));
+    pageElement.blur();
   });
 
   // These page elements cannot be typed, so therefore they are always instantly set

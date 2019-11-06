@@ -16,7 +16,7 @@ chrome.storage.local.get(['options'], function(result) {
 // Sets up the trigger that will initialize the autofill function
 // Can accept either a hotkey or be triggered by pageload
 const setupTriggers = options => {
-  if (options.trigger === 'hotkey') {
+  if (!options.general.automatic) {
     chrome.extension.onMessage.addListener(function(request) {
       if (request.action === 'autofill') {
         identifyStep(document.URL);
@@ -65,7 +65,7 @@ const fillShipping = profile => {
   fields.forEach(field => {
     let pageElement = document.getElementById(field);
     let detail = fieldDetails[field];
-    field.focus();
+    pageElement.focus();
 
     if (options.entry === 'instant') {
       fillField(pageElement, detail);
@@ -73,8 +73,8 @@ const fillShipping = profile => {
       typeField(pageElement, detail);
     }
 
-    field.dispatchEvent(new Event('change'));
-    field.blur();
+    pageElement.dispatchEvent(new Event('change'));
+    pageElement.blur();
   });
 
   document.getElementById('checkout_shipping_address_country').value =
