@@ -29,7 +29,6 @@ const setupTriggers = (options, profile) => {
 
 //Automatically fill out the standard stripe iframe with the users supplied information
 const fillBilling = profile => {
-  console.log('Running');
   let billingDetails = profile.billing;
 
   const optionalFields = {

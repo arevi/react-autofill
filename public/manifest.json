@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "React Autofill",
   "author": "Arevi",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Automate the filling of checkout forms, increasing your checkout speeds.",
   "browser_action": {
     "default_popup": "index.html",

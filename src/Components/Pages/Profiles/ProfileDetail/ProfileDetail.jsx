@@ -1,29 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import {
-  addProfile,
-  removeProfile,
-  editProfile
-} from '../../../../actions/profileActions';
-
 import './profiledetail.css';
 
 function ProfileDetail(props) {
-  const dispatch = useDispatch();
   const [profile, setProfile] = useState({
     name: '',
-    shipping: {
-      email: '',
-      first_name: '',
-      last_name: '',
-      address: '',
-      apartment: '',
-      city: '',
-      country: '',
-      state: '',
-      zipcode: '',
-      phone: ''
-    },
     billing: {
       first_name: '',
       last_name: '',
@@ -45,7 +25,7 @@ function ProfileDetail(props) {
 
   useEffect(() => {
     if (props.activeEdit) {
-      setProfile(props.activeEdit);
+      setProfile(JSON.parse(JSON.stringify(props.activeEdit)));
     }
   }, [props.activeEdit]);
 
@@ -60,19 +40,17 @@ function ProfileDetail(props) {
     setProfile(updatedProfile);
   };
 
-  const addOrUpdateProfile = () => {
-    let matches = props.allProfiles.filter(item => item.name === profile.name);
+  const addUpdateProfile = () => {
+    props.updateProfile(profile);
+  };
 
-    if (matches.length === 0) {
-      dispatch(addProfile(profile));
-    } else {
-      dispatch(editProfile(profile));
-    }
+  const removeProfile = () => {
+    props.deleteProfile(profile);
   };
 
   return (
     <div id='profile-detail'>
-      <h2 className='border-label'>Shipping Details</h2>
+      <h2 className='border-label'>billing Details</h2>
       <div className='wrapper'>
         <div className='col-1'>
           <label htmlFor='email'>Email</label>
@@ -80,40 +58,40 @@ function ProfileDetail(props) {
             type='text'
             name='email'
             autoComplete='email'
-            value={profile ? profile.shipping.email : ''}
-            onChange={e => modifyProfile(e, 'email', 'shipping')}
+            value={profile ? profile.billing.email : ''}
+            onChange={e => modifyProfile(e, 'email', 'billing')}
           />
           <label htmlFor='phoneNumber'>Phone</label>
           <input
             type='text'
             name='phoneNumber'
             autoComplete='tel'
-            value={profile ? profile.shipping.phone : ''}
-            onChange={e => modifyProfile(e, 'phone', 'shipping')}
+            value={profile ? profile.billing.phone : ''}
+            onChange={e => modifyProfile(e, 'phone', 'billing')}
           />
           <label htmlFor='firstName'>First Name</label>
           <input
             type='text'
             name='firstName'
             autoComplete='given-name'
-            value={profile ? profile.shipping.first_name : ''}
-            onChange={e => modifyProfile(e, 'first_name', 'shipping')}
+            value={profile ? profile.billing.first_name : ''}
+            onChange={e => modifyProfile(e, 'first_name', 'billing')}
           />
           <label htmlFor='lastName'>Last Name</label>
           <input
             type='text'
             name='lastName'
             autoComplete='family-name'
-            value={profile ? profile.shipping.last_name : ''}
-            onChange={e => modifyProfile(e, 'last_name', 'shipping')}
+            value={profile ? profile.billing.last_name : ''}
+            onChange={e => modifyProfile(e, 'last_name', 'billing')}
           />
           <label htmlFor='country'>Country</label>
           <input
             type='text'
             name='country'
             autoComplete='country-name'
-            value={profile ? profile.shipping.country : ''}
-            onChange={e => modifyProfile(e, 'country', 'shipping')}
+            value={profile ? profile.billing.country : ''}
+            onChange={e => modifyProfile(e, 'country', 'billing')}
           />
         </div>
         <div className='col-2'>
@@ -122,40 +100,40 @@ function ProfileDetail(props) {
             type='text'
             name='address'
             autoComplete='street-address'
-            value={profile ? profile.shipping.address : ''}
-            onChange={e => modifyProfile(e, 'address', 'shipping')}
+            value={profile ? profile.billing.address : ''}
+            onChange={e => modifyProfile(e, 'address', 'billing')}
           />
           <label htmlFor='apartment'>Apartment</label>
           <input
             type='text'
             name='apartment'
             autoComplete='address-line1'
-            value={profile ? profile.shipping.apartment : ''}
-            onChange={e => modifyProfile(e, 'apartment', 'shipping')}
+            value={profile ? profile.billing.apartment : ''}
+            onChange={e => modifyProfile(e, 'apartment', 'billing')}
           />
           <label htmlFor='city'>City</label>
           <input
             type='text'
             name='city'
             autoComplete='address-level2'
-            value={profile ? profile.shipping.city : ''}
-            onChange={e => modifyProfile(e, 'city', 'shipping')}
+            value={profile ? profile.billing.city : ''}
+            onChange={e => modifyProfile(e, 'city', 'billing')}
           />
           <label htmlFor='state'>State</label>
           <input
             type='text'
             name='state'
             autoComplete='address-level1'
-            value={profile ? profile.shipping.state : ''}
-            onChange={e => modifyProfile(e, 'state', 'shipping')}
+            value={profile ? profile.billing.state : ''}
+            onChange={e => modifyProfile(e, 'state', 'billing')}
           />
           <label htmlFor='zipcode'>Zip Code</label>
           <input
             type='text'
             name='zipcode'
             autoComplete='postal-code'
-            value={profile ? profile.shipping.zipcode : ''}
-            onChange={e => modifyProfile(e, 'zipcode', 'shipping')}
+            value={profile ? profile.billing.zipcode : ''}
+            onChange={e => modifyProfile(e, 'zipcode', 'billing')}
           />
         </div>
       </div>
@@ -176,7 +154,7 @@ function ProfileDetail(props) {
             id='cardTypeSelect'
             autoComplete='cc-type'
             value={profile ? profile.billing.cardType : 'Visa'}
-            onChange={e => modifyProfile(e, 'billing', 'cardType')}
+            onChange={e => modifyProfile(e, 'cardType', 'billing')}
           >
             <option value='AMEX'>American Express</option>
             <option value='Discover'>Discover</option>
@@ -261,13 +239,10 @@ function ProfileDetail(props) {
           />
         </div>
         <div className='col-2' id='profileControls'>
-          <button className='btn save' onClick={addOrUpdateProfile}>
+          <button className='btn save' onClick={() => addUpdateProfile()}>
             Save
           </button>
-          <button
-            className='btn delete'
-            onClick={() => dispatch(removeProfile(profile))}
-          >
+          <button className='btn delete' onClick={() => removeProfile()}>
             Delete
           </button>
         </div>

@@ -47,17 +47,17 @@ const identifyStep = url => {
 //fieldDetails object whas a "key" of the field and a "value" of what the field should contain from the profile
 // Then iterates over the fields selecting them from the DOM and filling the fields with user options
 const fillShipping = profile => {
-  let shippingDetails = profile.shipping;
+  let billingDetails = profile.billing;
 
   const fieldDetails = {
-    checkout_email: shippingDetails.email,
-    checkout_shipping_address_first_name: shippingDetails.first_name,
-    checkout_shipping_address_last_name: shippingDetails.last_name,
-    checkout_shipping_address_address1: shippingDetails.address,
-    checkout_shipping_address_address2: shippingDetails.apartment,
-    checkout_shipping_address_city: shippingDetails.city,
-    checkout_shipping_address_zip: shippingDetails.zipcode,
-    checkout_shipping_address_phone: shippingDetails.phone
+    checkout_email: billingDetails.email,
+    checkout_shipping_address_first_name: billingDetails.first_name,
+    checkout_shipping_address_last_name: billingDetails.last_name,
+    checkout_shipping_address_address1: billingDetails.address,
+    checkout_shipping_address_address2: billingDetails.apartment,
+    checkout_shipping_address_city: billingDetails.city,
+    checkout_shipping_address_zip: billingDetails.zipcode,
+    checkout_shipping_address_phone: billingDetails.phone
   };
 
   const fields = Object.keys(fieldDetails);
@@ -78,9 +78,9 @@ const fillShipping = profile => {
   });
 
   document.getElementById('checkout_shipping_address_country').value =
-    shippingDetails.country;
+    billingDetails.country;
   document.getElementById('checkout_shipping_address_province').value =
-    shippingDetails.state;
+    billingDetails.state;
 
   if (options.shopify.navigateSteps) {
     clickNextStep();

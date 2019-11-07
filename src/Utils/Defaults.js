@@ -26,18 +26,6 @@ const getTestProfile = () => {
   return {
     id: 0,
     name: 'Test Profile',
-    shipping: {
-      email: 'TestProfile@gmail.com',
-      first_name: 'Test',
-      last_name: 'Profile',
-      address: '123 Main Street',
-      apartment: 'Apartment 1',
-      city: 'New York',
-      country: 'United States',
-      state: 'NY',
-      zipcode: '10001',
-      phone: '1234567890'
-    },
     billing: {
       first_name: 'Test',
       last_name: 'Profile',

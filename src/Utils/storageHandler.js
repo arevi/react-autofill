@@ -25,3 +25,7 @@ export const saveOptions = options => {
 export const setCurrentProfile = profile => {
   chrome.storage.local.set({ selectedProfile: profile });
 };
+
+export const getCurrentProfile = () => {
+  return chrome.storage.local.get(['selectedProfile']);
+};
