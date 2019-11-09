@@ -9,18 +9,22 @@ All of this is done securely, on your local machine. React-Autofill does not tra
 ## Build Instructions
 
 ```
-"npm install"
-"npm run build"
+npm install
+npm run build
 See /build/ for output
 ```
 
 ## Install Instructions
 
+Chrome Web Store: [Download](https://chrome.google.com/webstore/detail/react-autofill/haagifdfgnhhibgfcgmkjgjmefmpjjdm)
+
+or
+
 ```
-- Download the latest build from the releases page.
-- Navigate to chrome://extensions/
-- Enable Developer mode
-- Drag and drop the zip file into the extensions page.
+Download the latest build from the releases page.
+Navigate to chrome://extensions/
+Enable Developer mode
+Drag and drop the zip file into the extensions page.
 ```
 
 ## Contribute
