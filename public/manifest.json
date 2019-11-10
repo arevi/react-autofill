@@ -27,8 +27,7 @@
         "https://*/*/checkouts/*",
         "https://*.shopifycs.com/*",
         "https://js.stripe.com/*",
-        "https://checkout.stripe.com/m/v3/*",
-        "https://checkout.stripe.com/pay*",
+        "https://checkout.stripe.com/*",
         "https://www.supremenewyork.com/checkout"
       ]
     },
@@ -42,11 +41,7 @@
       "all_frames": true
     },
     {
-      "matches": [
-        "https://js.stripe.com/*",
-        "https://checkout.stripe.com/m/v3/*",
-        "https://checkout.stripe.com/pay*"
-      ],
+      "matches": ["https://js.stripe.com/*", "https://checkout.stripe.com/*"],
       "js": ["sites/stripe.js"],
       "all_frames": true
     },

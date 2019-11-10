@@ -26,6 +26,7 @@ import './App.css';
 function App() {
   const dispatch = useDispatch();
 
+  // Called upon application being mounted, retrieves the current list of profiles and option data from chrome storage. This data is passed to the Redux state for state storage.
   useEffect(() => {
     let profileData = getProfiles();
     let optionData = getOptions();
