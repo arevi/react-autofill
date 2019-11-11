@@ -15,7 +15,7 @@
     "64": "./images/64.png",
     "128": "./images/128.png"
   },
-  "permissions": ["storage", "activeTab"],
+  "permissions": ["storage"],
   "background": {
     "scripts": ["background.js"]
   },
