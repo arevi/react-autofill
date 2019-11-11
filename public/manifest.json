@@ -21,7 +21,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://*/*", "http://*/*"],
+      "matches": ["*://*/*"],
       "js": ["sites/all.js"],
       "exclude_matches": [
         "https://*/*/checkouts/*",
