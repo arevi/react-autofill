@@ -41,7 +41,7 @@
       "all_frames": true
     },
     {
-      "matches": ["https://js.stripe.com/*", "https://checkout.stripe.com/*"],
+      "matches": ["https://*.stripe.com/*"],
       "js": ["sites/stripe.js"],
       "all_frames": true
     },
