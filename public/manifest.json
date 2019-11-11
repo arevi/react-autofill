@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "React Autofill",
   "author": "Arevi",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Automate the filling of checkout forms, increasing your checkout speeds.",
   "browser_action": {
     "default_popup": "index.html",
@@ -54,8 +54,10 @@
   "commands": {
     "autofill": {
       "suggested_key": {
-        "default": "Ctrl+Shift+K",
-        "windows": "Ctrl+Shift+K"
+        "default": "Ctrl+Shift+F",
+        "windows": "Ctrl+Shift+F",
+        "mac": "Command+Shift+F",
+        "linux": "Ctrl+Shift+F"
       },
       "description": "Initiate autofill on the current page."
     }

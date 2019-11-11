@@ -1,6 +1,6 @@
 {
   "name": "react-autofill",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "dependencies": {
     "react": "^16.11.0",
