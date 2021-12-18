@@ -31,7 +31,6 @@ Drag and drop the zip file into the extensions page.
 
 - Please open an issue report for any bugs you may come across.
 - If you have experience working with JavaScript and/or React, please open a pull request for anything you have to contribute!
-- [Join the discussion on Discord](https://discord.gg/JT7AygN)
 
 ## Site Support
 
